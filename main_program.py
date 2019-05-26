@@ -49,7 +49,7 @@ def clap_detected():
 # creat a clapDetector instance listening on GPIO21
 detector = clapDetector.ClapDetector(21)
 detector.register_listener(lambda x: clap_detected())
-# create on ClapAnalyzer per pattern
+# create one ClapAnalyzer per pattern
 analyzer0 = clapAnalyzer.ClapAnalyzer([0.25, 0.25, 0.5, 0.5])
 analyzer1 = clapAnalyzer.ClapAnalyzer([0.5, 0.25, 0.25, 0.5])
 analyzer2 = clapAnalyzer.ClapAnalyzer([0.5, 0.5, 0.25, 0.25])
