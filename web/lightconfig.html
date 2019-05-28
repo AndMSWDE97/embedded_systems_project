@@ -13,9 +13,7 @@
 			xhttp.open("POST", "api/setMapping", true);
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4) {
-					if (this.status == 200) {
-						document.getElementById("feedback").innerHTML = this.responseText;
-					} else {
+					if (this.status != 200) {
 						document.getElementById("feedback").innerHTML = this.status-text + this.responseText;
 					}
 				}
@@ -27,12 +25,6 @@
 <body>
 	<div id="background">
         	<div id="content">
-            		<nav>
-                		<ul>
-                    			<li><a href="./lightinfo.html">Status</a></li>
-                    			<li><a href="./lightconfig.html">Configuration</a></li>
-                		</ul>
-            		</nav>
 	    		<h2>Configuration</h2>
 	    		<div>
 				<h3>Sequence 1</h3>
