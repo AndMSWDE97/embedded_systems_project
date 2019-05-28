@@ -1,0 +1,67 @@
+<!DOCTYPE=html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	<script>
+		var xhttp = new XMLHttpRequest();
+		function updateMatching() {
+			var sequence0 = document.getElementById("sequence0").value;
+			var sequence1 = document.getElementById("sequence1").value;
+			var sequence2 = document.getElementById("sequence2").value;
+			jsonString = '{"0":"' + sequence0 + '", "1":"' + sequence1 + '", "2":"' + sequence2 + '"}';
+			console.log(jsonString);
+			xhttp.open("POST", "api/setMapping", true);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4) {
+					if (this.status == 200) {
+						document.getElementById("feedback").innerHTML = this.responseText;
+					} else {
+						document.getElementById("feedback").innerHTML = this.status-text + this.responseText;
+					}
+				}
+			}
+			xhttp.send(jsonString);
+		};
+	</script>
+</head>
+<body>
+	<div id="background">
+        	<div id="content">
+            		<nav>
+                		<ul>
+                    			<li><a href="./lightinfo.html">Status</a></li>
+                    			<li><a href="./lightconfig.html">Configuration</a></li>
+                		</ul>
+            		</nav>
+	    		<h2>Configuration</h2>
+	    		<div>
+				<h3>Sequence 1</h3>
+				<img src="./pictures/double_notes.png"/><img src="./pictures/single_notes.png"/><img src="./pictures/single_notes.png"/>
+				<select id="sequence0" onchange=updateMatching()>
+		    			<option value="0" selected>light off</option>
+		    			<option value="1">light on</option>
+		    			<option value="2">blink light</option>
+				</select>
+	    		</div>
+	    		<div>
+				<h3>Sequence 2</h3>
+				<img src="./pictures/single_notes.png"/><img src="./pictures/double_notes.png"/><img src="./pictures/single_notes.png"/>
+				<select id="sequence1" onchange=updateMatching()>
+		    			<option value="0">light off</option>
+		    			<option value="1" selected>light on</option>
+		    			<option value="2">blink light</option>
+				</select>
+	    		</div>
+	    		<div>
+				<h3>Sequence 3</h3>
+				<img src="./pictures/single_notes.png"/><img src="./pictures/single_notes.png"/><img src="./pictures/double_notes.png"/>
+				<select id="sequence2" onchange=updateMatching()>
+		    			<option value="0">light off</option>
+		    			<option value="1">light on</option>
+		    			<option value="2" selected>blink light</option>
+				</select>
+	    		</div>
+			<p id="feedback"></p>
+        	</div>
+    	</div>
+</body>

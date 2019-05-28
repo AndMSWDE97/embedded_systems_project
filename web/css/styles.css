@@ -1,0 +1,104 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: arial;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  body, html {
+      height: 100%;
+  }
+  
+  a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+  
+  nav {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+    background: #3a3a3a;
+    font-size: 22px;
+    font-weight: 300;
+    color: white;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    padding: 1rem;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li {
+    position: relative;
+    float: left;
+    list-style: none;
+    padding: 0px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  
+  nav ul li:hover {
+    background: #4096ee;
+  }
+  
+  div > {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .leftEnd {
+    margin: 1rem;
+    margin-left: 0px;
+    display: inline box;
+    float: left;
+  }
+  
+  .rightEnd {
+    margin: 0px;
+    float: right;
+  }
+
+  #login{
+    min-width: 20%;
+    margin: auto;
+    padding-top: 5rem;
+  }
+  
+  #login > * {
+    text-align: center;
+    margin:  auto;
+  }
+
+  #content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+    min-width: 30rem;
+    max-width: 70rem;
+    height: 90%;
+    min-height: 30rem;
+    background-color: white;
+    text-align: center;
+    border-radius: 2em;
+  }
+
+  #background {
+      background-color: black;
+      height: 100%;
+  }
+
+  #status {
+      font-size: 16rem;
+  }
